@@ -2,7 +2,7 @@ FROM node:lts-alpine as base
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 COPY .env chromedriver ./
-COPY public .
+COPY public ./public
 
 FROM base as build
 RUN ["npm", "i"]
