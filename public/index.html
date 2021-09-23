@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer type="module"></script>
+    <title>NTOU Calendar</title>
+  </head>
+  <body>
+    <div class="table-based">
+      <div class="accordion mb-3" id="accordionFlush">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-heading">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse"
+              aria-expanded="false"
+              aria-controls="flush-collapse"
+              id="accordionBtn"
+            >
+              控制
+            </button>
+          </h2>
+          <div
+            id="flush-collapse"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-heading"
+            data-bs-parent="#accordionFlush"
+          >
+            <div class="accordion-body">
+              <div>
+                <div class="mb-3">
+                  <label for="account" class="form-label">學號</label>
+                  <input type="text" class="form-control" id="account" />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label"
+                    >教學務系統密碼</label
+                  >
+                  <input type="password" class="form-control" id="password" />
+                  <i class="small text-danger"
+                    >密碼只會在截取資料時被使用，不會被系統保存。</i
+                  >
+                </div>
+                <div class="action">
+                  <button type="button" class="btn btn-primary" id="fetchData">
+                    取得資料
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="forceFetchData"
+                    hidden
+                  >
+                    強制重新取得資料
+                  </button>
+                </div>
+                <div>
+                  <i class="small">第一次執行會比較久，給他一點點時間:D</i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-bordered"></table>
+    </div>
+    <div class="spinner" hidden>
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </body>
+</html>
