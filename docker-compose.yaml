@@ -1,6 +1,9 @@
 version: "3.3"
 
 services:
+  chrome:
+    image: selenium/standalone-chrome
+    container_name: calendar-standalone-chrome
   mongodb:
     image: mongo:latest
     container_name: calendar-record-mongodb
@@ -18,3 +21,4 @@ services:
       - mongodb
     links:
       - "mongodb:mongodb"
+      - "chrome:chrome"

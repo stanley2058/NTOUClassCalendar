@@ -12,6 +12,7 @@ RUN ["tsc"]
 
 FROM base as prod
 ENV NODE_ENV=production
+ENV SELENIUM_REMOTE_URL=http://chrome:4444/wd/hub
 ENV MONGODB_URI=mongodb://ntou:ntou-calendar@mongodb:27017/Record?authSource=Record
 RUN ["npm", "i"]
 COPY --from=build /usr/src/app/dist/ .
