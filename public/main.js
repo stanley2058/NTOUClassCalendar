@@ -16,7 +16,7 @@ const getData = async (autoFetch = true) => {
     return;
   }
 
-  const res = await fetch(`http://localhost:3000/calendar?account=${account}`);
+  const res = await fetch(`/calendar?account=${account}`);
   const record = await res.json();
   if (!record) {
     spinner.hidden = true;
@@ -45,7 +45,7 @@ const forceFetch = async () => {
     return;
   }
 
-  const res = await fetch("http://localhost:3000/fetchCalendar", {
+  const res = await fetch("/fetchCalendar", {
     method: "POST",
     body: JSON.stringify({
       account,
